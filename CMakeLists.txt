@@ -24,6 +24,12 @@ add_library(smart_pointer_lib
 
 target_compile_features(smart_pointer_lib PUBLIC cxx_std_20)
 
+add_executable(smart_pointer_demo
+	questions/02_smart_pointer/smart_pointer.cpp
+)
+
+target_compile_features(smart_pointer_demo PUBLIC cxx_std_20)
+
 if(BUILD_TESTING)
 	include(FetchContent)
 
