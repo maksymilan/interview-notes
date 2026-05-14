@@ -1,5 +1,6 @@
 /.vscode
 /build
 /build-gcc
+/build-gcc-release
 /.cache
 .*

@@ -30,6 +30,32 @@ add_executable(smart_pointer_demo
 
 target_compile_features(smart_pointer_demo PUBLIC cxx_std_20)
 
+add_library(spsc_queue_lib
+	questions/03_SPSC/lockfree_queue_SPSC.cpp
+)
+
+target_compile_features(spsc_queue_lib PUBLIC cxx_std_20)
+
+add_executable(spsc_queue_correctness
+	test/spsc_queue_correctness.cpp
+)
+
+target_include_directories(spsc_queue_correctness PRIVATE
+	${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+target_compile_features(spsc_queue_correctness PUBLIC cxx_std_20)
+
+add_executable(spsc_queue_benchmark
+	test/spsc_queue_benchmark.cpp
+)
+
+target_include_directories(spsc_queue_benchmark PRIVATE
+	${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+target_compile_features(spsc_queue_benchmark PUBLIC cxx_std_20)
+
 if(BUILD_TESTING)
 	include(FetchContent)
 
